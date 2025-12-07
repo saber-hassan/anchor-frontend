@@ -16,6 +16,8 @@
   <link rel="stylesheet" href="styles/index.css" />
   <link rel="stylesheet" href="styles/header-footer.css">
   <link rel="stylesheet" href="styles/funding.css" />
+  <link rel="stylesheet" href="styles/payment-gateway.css" />
+
   <!-- Add page-specific CSS here if needed -->
   <!-- <link rel="stylesheet" href="styles/dashboard.css"> -->
 </head>
@@ -118,7 +120,7 @@
         <div class="raised-amount">฿40,500</div>
       </div>
       <div class="actions">
-        <button class="donate-btn">Donate</button>
+         <button class="donate-btn">Donate</button>
         <button class="view-btn">View</button>
       </div>
     </div>
@@ -128,12 +130,48 @@
 
   </main>
 
+
+  <div class="overlay" id="paymentOverlay" onclick="closeOnOutsideClick(event)">
+    <div class="payment-modal">
+        <button class="close-btn" onclick="closePaymentModal()">&times;</button>
+        
+        <div class="modal-header">
+            <h2>Donate Info</h2>
+            <div class="amount-field">
+                <label>Amount:</label>
+                <input type="text" value="10000.00" id="amount">
+            </div>
+            <h3 class="payment-method-title">Payment method</h3>
+        </div>
+
+        <div class="payment-tabs">
+            <button class="tab active" onclick="switchTab('cards')">Cards</button>
+            <button class="tab" onclick="switchTab('mobile')">Mobile Banking</button>
+        </div>
+
+        <div id="cardsTab" class="tab-content active">
+            <!-- Card fields here -->
+        </div>
+
+        <div id="mobileTab" class="tab-content">
+            <!-- Mobile banking options here -->
+        </div>
+
+        <button class="pay-button" onclick="processPayment()">Pay 10000.00</button>
+    </div>
+</div>
+
+
   <!-- FOOTER -->
   <div id="footerPlaceholder"></div>
 
   <!-- Load Header + Footer (and logout function) -->
   <script src="javascript/header-footer.js"></script>
+    <script src="javascript/payment-gateway.js"></script>
   <script src="javascript/funding.js"></script>
+  <script src="javascript/floating-profile.js"></script>
+
+
 
 </body>
 </html>

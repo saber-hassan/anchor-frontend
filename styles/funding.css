@@ -1,16 +1,5 @@
-/* Page fade animation */
-body {
-  opacity: 0;
-  transition: opacity 0.4s ease;
+/* Page fade animation - THIS IS THE USUAL CRIMINAL */
 
-  background: var(--bg-dark);
-  min-height: 100vh;
-
-}
-
-body.fade-in {
-  opacity: 1;
-}
 
 
 * {
@@ -24,7 +13,30 @@ body {
   color: #d0ece7;
   font-family: 'Segoe UI', sans-serif;
   min-height: 100vh;
+
+  opacity: 0;
+  transition: opacity .6s ease;
+  overflow: hidden;
+  
 }
+
+
+
+body.fade-in {
+  opacity: 1;
+}
+
+
+/* Main Layout */
+main {
+  padding: 40px 0;
+  text-align: center;
+}
+
+
+
+
+
 
 .container {
   max-width: 1300px;
@@ -113,7 +125,7 @@ main {
   color: white;
   padding: 12px 20px;
   border-radius: 50px;
-  
+
 }
 
 .create-post {
@@ -132,9 +144,11 @@ main {
 .posts-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, 400px);
-  justify-content: center;  
-  gap: 30px 30px;                    /* This creates 30px between cards */
-  padding: 20px 20px;                /* Optional: keeps cards from touching screen edge */
+  justify-content: center;
+  gap: 30px 30px;
+  /* This creates 30px between cards */
+  padding: 20px 20px;
+  /* Optional: keeps cards from touching screen edge */
   max-width: 1400px;
   margin: 0 auto;
 }
@@ -165,7 +179,8 @@ main {
 
 .card-content {
   width: 100%;
-  height: calc(500px - 226px);  /* 500px card height - 226px image */
+  height: calc(500px - 226px);
+  /* 500px card height - 226px image */
   padding: 20px;
   padding-top: 5px;
   box-sizing: border-box;
@@ -195,7 +210,8 @@ main {
   font-size: 13px;
   color: #a0d8d2;
   opacity: 0.9;
-  margin-bottom: 0; /* override any previous margin */
+  margin-bottom: 0;
+  /* override any previous margin */
 }
 
 
@@ -205,7 +221,8 @@ main {
   margin: 10px 0;
   line-height: 1.4;
   display: -webkit-box;
-  -webkit-line-clamp: 1;       /* show only  lines */
+  -webkit-line-clamp: 1;
+  /* show only  lines */
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -216,9 +233,11 @@ main {
 
 .card p {
   font-size: 14px;
-  line-height: 1.1;           /* important for consistent 3-line height */
+  line-height: 1.1;
+  /* important for consistent 3-line height */
   display: -webkit-box;
-  -webkit-line-clamp: 3;       /* show only 3 lines */
+  -webkit-line-clamp: 3;
+  /* show only 3 lines */
   -webkit-box-orient: vertical;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -231,7 +250,7 @@ main {
 .progress-container {
   position: relative;
   margin: 10px 0;
-  
+
 
 }
 
@@ -257,7 +276,7 @@ main {
   color: #00bfa5;
   text-align: right;
   color: #b8e6e0;
-  
+
 }
 
 /* Raised amount - bottom left */
@@ -285,7 +304,7 @@ main {
 .actions button {
   flex: 1;
   padding: 12px;
-  
+
   border-radius: 5px;
   cursor: pointer;
   font-weight: bold;
@@ -304,3 +323,7 @@ main {
   border-width: 1px;
   border-color: #00bfa5;
 }
+
+
+
+/* or just remove max-width limits */
