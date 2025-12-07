@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate Now</title>
+
+    <link rel="stylesheet" href="/styles/payment-gateway.css">
+    
+</head>
+
+<body>
+
+    <div class="overlay" id="paymentOverlay">
+        <div class="payment-modal">
+
+            <div class="modal-header">
+                <h2>Donate Info</h2>
+                <div class="amount-field">
+                    <label>Amount (৳):</label>
+                    <input type="text" value="10000.00" id="amount" readonly>
+                </div>
+                <h3 class="payment-method-title">Payment method</h3>
+            </div>
+
+            <div class="payment-tabs">
+                <button class="tab active" data-tab="cards">Cards</button>
+                <button class="tab" data-tab="mobile">Mobile Banking</button>
+            </div>
+
+            <!-- FIXED CARDS TAB - NOW PERFECT -->
+            <div id="cardsTab" class="tab-content active">
+                <div class="card-logos">
+                    <img src="images/payment-gateway/visa.jpg" alt="Visa">
+                    <img src="images/payment-gateway/mastercard.jpg" alt="Mastercard">
+                    <img src="images/payment-gateway/americanex.jpg" alt="American Express">
+                </div>
+
+                <div class="card-form-container">
+                    <input type="text" placeholder="Card Number" maxlength="19">
+
+                    <div class="expiry-cvc-row">
+                        <input type="text" placeholder="MM/YY" maxlength="5">
+                        <input type="text" placeholder="CVC/CVV" maxlength="4">
+                    </div>
+
+                    <input type="text" placeholder="Card Holder Name">
+
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="rememberCard">
+                        <label for="rememberCard">Remember this card</label>
+                    </div>
+
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="terms" required>
+                        <label for="terms">I agree to the <a href="#" target="_blank">Terms of Service</a></label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- MOBILE BANKING TAB -->
+            <div id="mobileTab" class="tab-content">
+                <div class="mobile-banking-grid">
+                    <div class="mobile-banking-option"><img src="images/payment-gateway/nogod.jpg" alt="Nagad"></div>
+                    <div class="mobile-banking-option"><img src="images/payment-gateway/dbbl.jpg" alt="DBBL"></div>
+                    <div class="mobile-banking-option"><img src="images/payment-gateway/nogod.jpg" alt="bKash"></div>
+                    <div class="mobile-banking-option"><img src="images/payment-gateway/rocket.jpg" alt="Rocket"></div>
+                    <div class="mobile-banking-option"><img src="images/payment-gateway/upai.jpg" alt="Upay"></div>
+                </div>
+            </div>
+
+            <button class="pay-button" onclick="processPayment()">
+                Pay <span id="payAmount">10000.00</span>  ৳
+            </button>
+        </div>
+    </div>
+
+   
+    <script src="javascript/payment-gateway.js"></script>
+</body>
+
+</html>
