@@ -1,8 +1,15 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
-
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { font-family: 'Inter', sans-serif; background: #000; display: grid; place-items: center; min-height: 100vh; }
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 255); /* Overlay with black semi-transparent background */
+  z-index: 999; /* Ensure the overlay is above the content */
+}
 
 .frame {
   width: 739px;
@@ -10,6 +17,7 @@ body { font-family: 'Inter', sans-serif; background: #000; display: grid; place-
   background: #FFFFFF;
   border-radius: 5px;
   padding: 1px;
+  z-index: 1000; /* Keep the frame above the overlay */
 }
 
 .card {
