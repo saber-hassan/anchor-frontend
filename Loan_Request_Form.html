@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loan Request Form</title>
+    <link rel="stylesheet" href="/styles/Loan_Request_Form.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="frame">
+        <form id="loanForm">
+            <h1 class="form-title">Loan Request Form</h1>
+
+            <section class="form-section">
+                <label class="section-label">Category</label>
+                <div class="category-group">
+                    <div class="category-row">
+                        <button type="button" class="category-btn selected" data-category="Accidents">Accidents</button>
+                        <button type="button" class="category-btn selected" data-category="Flood Relief">Flood Relief</button>
+                        <button type="button" class="category-btn selected" data-category="Clothes Distribution">Clothes Distribution</button>
+                    </div>
+                    <div class="category-row">
+                        <button type="button" class="category-btn selected" data-category="Other">Other</button>
+                        <button type="button" class="category-btn selected" data-category="Emergency">Emergency</button>
+                        <button type="button" class="category-btn custom-type-btn" data-category="Custom">
+                            Custom <span class="custom-type-text">Type</span>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="form-section">
+                <label for="amountNeeded" class="section-title">1. Amount Needed:</label>
+                <input type="text" id="amountNeeded" class="input-rectangle" placeholder="Enter amount">
+            </section>
+
+            <section class="form-section">
+                <label class="section-title">2. Loan Duration:</label>
+                <div class="radio-group duration-group">
+                    <input type="radio" id="duration1" name="loanDuration" value="1 month" checked>
+                    <label for="duration1">1 month</label>
+
+                    <input type="radio" id="duration3" name="loanDuration" value="3 months">
+                    <label for="duration3">3 months</label>
+
+                    <input type="radio" id="duration6" name="loanDuration" value="6 months">
+                    <label for="duration6">6 months</label>
+
+                    <input type="radio" id="durationCustom" name="loanDuration" value="Custom">
+                    <label for="durationCustom">Custom</label>
+                    <input type="text" class="custom-duration-input" placeholder="Type" disabled>
+                </div>
+            </section>
+
+            <section class="form-section">
+                <label class="section-title">3. Repayment Option:</label>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="installments" name="repaymentOption" value="Installments" checked>
+                    <label for="installments">Installments</label>
+                </div>
+                <div class="checkbox-group">
+                    <input type="checkbox" id="oneTime" name="repaymentOption" value="One-time payment">
+                    <label for="oneTime">One-time payment</label>
+                </div>
+            </section>
+
+            <section class="form-section">
+                <label for="reasonForLoan" class="section-title">4. Reason for Loan:</label>
+                <textarea id="reasonForLoan" class="loan-box" rows="4" placeholder="Explain why you need this loan. Describe your situation clearly so lenders can understand your condition."></textarea>
+            </section>
+
+            <section class="form-section proof-documents-section">
+                <label class="section-title">5. Proof Documents:</label>
+                <p class="proof-upload-info">
+                    Upload Supporting Document<br>(Photo/PDF allowed)
+                </p>
+                <div class="proof-examples">
+                    Examples:
+                    <ul>
+                        <li>Hospital invoice</li>
+                        <li>Academic registration paper</li>
+                        <li>Business cost breakdown</li>
+                        <li>Repair bill</li>
+                        <li>Income verification</li>
+                    </ul>
+                    <p class="upload-image-text">Upload Image <br>(For showing receipts or related proof images).</p>
+                </div>
+                <div class="upload-container">
+                    <input type="file" id="proofUpload" multiple style="display: none;">
+                    <button type="button" class="upload-btn" onclick="document.getElementById('proofUpload').click()">
+                        <svg class="upload-icon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 17 17" fill="currentColor">
+                            <path d="M7.29167 12.5V4.01042L4.58333 6.71875L3.125 5.20833L8.33333 0L13.5417 5.20833L12.0833 6.71875L9.375 4.01042V12.5H7.29167ZM2.08333 16.6667C1.51042 16.6667 1.02014 16.4628 0.6125 16.0552C0.204861 15.6476 0.000694444 15.1569 0 14.5833V11.4583H2.08333V14.5833H14.5833V11.4583H16.6667V14.5833C16.6667 15.1562 16.4628 15.6469 16.0552 16.0552C15.6476 16.4635 15.1569 16.6674 14.5833 16.6667H2.08333Z"/>
+                        </svg>
+                        Upload
+                    </button>
+                </div>
+            </section>
+
+            <section class="form-section confirmation-section">
+                <input type="checkbox" id="confirmation" required>
+                <label for="confirmation" class="confirmation-text">
+                    I confirm that all the information provided in this loan request is true, and all uploaded documents are authentic. I understand that providing false information may result in account suspension.
+                </label>
+            </section>
+            
+            <div class="submit-button-container">
+                <button type="submit" class="submit-btn">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="/javascript/Loan_Request_Form.js"></script>
+</body>
+</html>
