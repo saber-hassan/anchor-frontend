@@ -108,3 +108,14 @@ document.addEventListener('DOMContentLoaded', function() {
   
 });
 
+
+document.addEventListener("DOMContentLoaded", function () {
+  const createBtn = document.getElementById("createPostBtn");
+
+  if (createBtn) {
+    createBtn.addEventListener("click", function () {
+      window.location.href = "funding_interface_form.html";
+    });
+  }
+});
+

@@ -24,7 +24,6 @@ body {
   font-family: 'Roboto', sans-serif; 
   line-height: 1.6; 
   color: var(--text-dark); 
-  background: var(--bg-light); 
   transition: scroll-behavior 0s 0.3s;
 }
 
